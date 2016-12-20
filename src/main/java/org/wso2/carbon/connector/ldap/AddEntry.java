@@ -59,9 +59,9 @@ public class AddEntry extends AbstractConnector {
 			}
 			entry.put(obClassAttr);
 			if (attributesString != null) {
-				String attrSet[] = attributesString.split(",");
+				String attrSet[] = attributesString.split("(?<!\\\\),");
 				for (int i = 0; i < attrSet.length; i++) {
-					String keyVals[] = attrSet[i].split("=");
+					String keyVals[] = attrSet[i].split("(?<!\\\\)=");
 					Attribute newAttr = new BasicAttribute(keyVals[0]);
 					newAttr.add(keyVals[1]);
 					entry.put(newAttr);
